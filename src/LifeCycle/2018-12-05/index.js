@@ -10,14 +10,15 @@ class LifeCycle extends Component {
       count: 1,
     };
   }
-  static getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps, nextState) {
     console.log('getDerivedStateFromProps', this);
+    console.log(nextProps, nextState);
     // return {test:1} // 这个数据会被添加进this.state
     return null;
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate');
+    console.log('shouldComponentUpdate', nextState, 'this', this.state);
     return true;
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -26,8 +27,8 @@ class LifeCycle extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('componentDidUpdate',);
-    console.log('prevProps, prevState, snapshot',prevProps, prevState, snapshot)
+    console.log('componentDidUpdate');
+    console.log('prevProps, prevState, snapshot', prevProps, prevState, snapshot);
   }
   render() {
     console.log('render');
