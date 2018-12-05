@@ -12,7 +12,7 @@ const HooksExample = () => {
   //   // Similar to componentDidMount and componentDidUpdate:
   //   console.log("useEffect1");
   // });
-  // const [name, setName] = useState({ name: 'my name', otherValue: '2222' });
+  const [name, setName] = useState({ name: 'my name', otherValue: '2222' });
   // useEffect(() => {
   //   // Similar to componentDidMount and componentDidUpdate:
   //   console.log("useEffect2",);
