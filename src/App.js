@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div style={{}}>
-        <PureComponentTest/>
+        <DiffClassAndFunction/>
       </div>
     );
   }
