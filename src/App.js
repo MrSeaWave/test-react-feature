@@ -5,12 +5,13 @@ import LifeCycleIndex from './LifeCycle';
 import LazyExample from './LazyExample/LazyExample';
 import DiffClassAndFunction from './DiffClassAndFunction';
 import PureComponentTest from './PureComponent';
+import TestContext from './Context';
 
 class App extends Component {
   render() {
     return (
       <div style={{}}>
-        <DiffClassAndFunction/>
+       <TestContext/>
       </div>
     );
   }
