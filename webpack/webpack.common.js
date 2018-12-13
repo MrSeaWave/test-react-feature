@@ -20,7 +20,7 @@ module.exports = {
     index: dir.js,
   }, //项目唯一入口文件
   output: {
-    publicPath: '/',
+    publicPath: '/',//打包生成的`index.html`文件里面引用资源的前缀,注意看source
     filename: '[name].[chunkhash].js',
     path: outputPath,
   },

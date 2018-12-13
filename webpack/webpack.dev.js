@@ -23,7 +23,7 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     open: true, // 自动打开浏览器
     port: port,
-    // publicPath: '/test',// 一定要和output设置一样
+    // publicPath: '/test',// 一定要和output设置一样，打包生成的静态文件所在的位置（
     public: `localhost:${port}`,
     historyApiFallback: true, // 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
   },
