@@ -20,7 +20,7 @@ module.exports = {
     index: dir.js,
   }, //项目唯一入口文件
   output: {
-    publicPath: './',
+    publicPath: '/',
     filename: '[name].[chunkhash].js',
     path: outputPath,
   },
@@ -54,8 +54,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
         },
