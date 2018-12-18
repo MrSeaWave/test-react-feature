@@ -6,12 +6,13 @@ import LazyExample from './LazyExample/LazyExample';
 import DiffClassAndFunction from './DiffClassAndFunction';
 import PureComponentTest from './PureComponent';
 import TestContext from './Context';
+import ParentChildComponent from './ParentChlldUnmount';
 
 class App extends Component {
   render() {
     return (
       <div style={{}}>
-       <TestContext/>
+        <ParentChildComponent/>
       </div>
     );
   }
