@@ -7,12 +7,13 @@ import DiffClassAndFunction from './DiffClassAndFunction';
 import PureComponentTest from './PureComponent';
 import TestContext from './Context';
 import ParentChildComponent from './ParentChlldUnmount';
+import KeyDiff from './KeyDiff';
 
 class App extends Component {
   render() {
     return (
       <div style={{}}>
-        <ParentChildComponent/>
+        <KeyDiff/>
       </div>
     );
   }
