@@ -27,7 +27,8 @@ class RouterB extends React.Component {
 
     return (
       <>
-        <div>routerB</div>
+        <div style={{ height: 1500, backgroundColor: 'green'}}>routerB</div>
+        <h1>bbbb</h1>
       </>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class RouterA extends React.Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class RouterA extends React.Component {
 
     return (
       <>
-        <div>routerA</div>
+        <div style={{ height: 1500, backgroundColor: 'green'}}>routerA</div>
+        <Link to="/router-b">Router B</Link>
+
       </>
     );
   }
