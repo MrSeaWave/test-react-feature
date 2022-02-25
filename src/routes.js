@@ -26,6 +26,11 @@ const routes = [
     title: 'context-Provider-Consumer',
     component: lazy(() => import(/* webpackChunkName: "context" */ './Context')),
   },
+  {
+    path: '/clone-element',
+    title: 'clone-element',
+    component: lazy(() => import(/* webpackChunkName: "CloneElement" */ './CloneElement')),
+  },
 ];
 
 export default routes
