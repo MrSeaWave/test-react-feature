@@ -20,7 +20,7 @@ module.exports = {
     index: dir.js,
   }, //项目唯一入口文件
   output: {
-    publicPath: '/',//打包生成的`index.html`文件里面引用资源的前缀,注意看source
+    publicPath: '/', //打包生成的`index.html`文件里面引用资源的前缀,注意看source
     filename: '[name].[chunkhash].js',
     path: outputPath,
   },
@@ -41,6 +41,10 @@ module.exports = {
       filename: '[name].[hash].css',
     }),
   ],
+  resolve: {
+    // 要解析的文件的扩展名
+    extensions: ['.js', '.jsx', '.json'],
+  },
   module: {
     //  loader 引入任何其他类型的文件
     rules: [
@@ -54,7 +58,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
