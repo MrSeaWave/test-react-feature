@@ -19,7 +19,7 @@ const ChildrenComponent = () => {
   );
 };
 
-class MiddleComponent extends PureComponent {
+class MiddleComponent extends Component {
   render() {
     console.log('middleFun');
     return <ChildrenComponent />;
@@ -44,6 +44,7 @@ class TestContext extends Component {
   };
   render() {
     const { value, providerValue } = this.state;
+    console.log('TestContext render state', this.state);
     return (
       <div>
         <TestContextFirst.Provider
