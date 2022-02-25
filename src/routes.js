@@ -16,6 +16,11 @@ const routes = [
     title: 'HOC',
     component: lazy(() => import(/* webpackChunkName: "HOC" */ './HOC')),
   },
+   {
+    path: '/life-cycle',
+    title: 'life-cycle',
+    component: lazy(() => import(/* webpackChunkName: "LifeCycle" */ './LifeCycle')),
+  },
 ];
 
 export default routes

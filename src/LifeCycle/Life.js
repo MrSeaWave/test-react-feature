@@ -10,9 +10,12 @@ class LifeCycle extends Component {
       count: 1,
     };
   }
-  static getDerivedStateFromProps(nextProps, nextState) {
-    console.log('getDerivedStateFromProps', this);
-    console.log(nextProps, nextState);
+
+  static getDerivedStateFromProps(props, state) {
+    console.group('getDerivedStateFromProps');
+    console.log('this', this);
+    console.log('props, state', props, state);
+    console.groupEnd('getDerivedStateFromProps');
     // return {test:1} // 这个数据会被添加进this.state
     return null;
   }
@@ -45,6 +48,7 @@ class LifeCycle extends Component {
           alignItems: 'center',
         }}
       >
+        <a href={'https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/'}>生命周期链接</a>
         <h3 style={{ textAlign: 'center' }}>生命周期</h3>
         <div className="lifecycle-img" style={{ alignSelf: 'center' }} />
         <button

@@ -21,32 +21,44 @@ class App extends Component {
     return (
       <div style={{}}>
         <BrowserRouter>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            {routes.map(route => {
-              const { path, title } = route;
-              return (
-                <li key={path}>
-                  <Link to={path}>{title}</Link>
-                </li>
-              );
-            })}
-          </ul>
-          <Suspense fallback={<p>Loading...</p>}>
-            <Switch>
-              <Route exact path="/" component={FatherIndex} />
-              {routes.map(route => {
-                const { path, component } = route;
-                return <Route key={path} path={path} component={component} />;
-              })}
-            </Switch>
-          </Suspense>
+          <div style={{ display: 'flex' }}>
+            <SidesPage />
+            <div style={{ flex: 1 }}>
+              <Suspense fallback={<p>Loading...</p>}>
+                <Switch>
+                  <Route exact path="/" component={FatherIndex} />
+                  {routes.map(route => {
+                    const { path, component } = route;
+                    return <Route key={path} path={path} component={component} />;
+                  })}
+                </Switch>
+              </Suspense>
+            </div>
+          </div>
         </BrowserRouter>
       </div>
     );
   }
+}
+
+function SidesPage() {
+  return (
+    <div style={{ marginRight: 20 }}>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        {routes.map(route => {
+          const { path, title } = route;
+          return (
+            <li key={path}>
+              <Link to={path}>{title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default App;
