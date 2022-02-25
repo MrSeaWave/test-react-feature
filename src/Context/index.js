@@ -19,7 +19,7 @@ const ChildrenComponent = () => {
   );
 };
 
-class MiddleComponent extends Component {
+class MiddleComponent extends PureComponent {
   render() {
     console.log('middleFun');
     return <ChildrenComponent />;
