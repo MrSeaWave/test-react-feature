@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackBar = require('webpackbar');
 
 // 参考：https://webpack.docschina.org/guides/output-management/
 const srcPath = path.resolve(__dirname, '../src');
@@ -25,6 +26,8 @@ module.exports = {
     path: outputPath,
   },
   plugins: [
+    // 进度条
+    new WebpackBar(),
     new CleanWebpackPlugin(['dist'], {
       root: path.join(__dirname, '../'),
       verbose: true, //实际表示的意义是Write logs to console，即是否要往终端上输出log。
