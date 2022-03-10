@@ -31,6 +31,11 @@ const routes = [
     title: 'clone-element',
     component: lazy(() => import(/* webpackChunkName: "CloneElement" */ './CloneElement')),
   },
+   {
+    path: '/hooks-state-push',
+    title: 'hooks-state-push',
+    component: lazy(() => import(/* webpackChunkName: "StatePush" */ './HooksExample/StatePush/index')),
+  },
 ];
 
 export default routes
