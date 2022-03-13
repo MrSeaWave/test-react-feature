@@ -36,6 +36,11 @@ const routes = [
     title: 'hooks-state-push',
     component: lazy(() => import(/* webpackChunkName: "StatePush" */ './HooksExample/StatePush/index')),
   },
+    {
+    path: '/my-redux',
+    title: '手写redux',
+    component: lazy(() => import(/* webpackChunkName: "MyRedux" */ './MyRedux/demo/index')),
+  },
 ];
 
 export default routes
