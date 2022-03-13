@@ -16,7 +16,6 @@ export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponen
     }
 
     componentWillMount() {
-      console.log('connect', this);
       // 从上下文中获取 store 该 store 是从根组件传递过来的
       const { store } = this.context;
       this._updateProps(); // 初始化执行一次 updateProps
