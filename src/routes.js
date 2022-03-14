@@ -32,6 +32,11 @@ const routes = [
     component: lazy(() => import(/* webpackChunkName: "CloneElement" */ './CloneElement')),
   },
    {
+    path: '/react-children',
+    title: 'React.Children Api',
+    component: lazy(() => import(/* webpackChunkName: "ReactChildrenPage" */ './ReactChildren')),
+  },
+   {
     path: '/hooks-state-push',
     title: 'hooks-state-push',
     component: lazy(() => import(/* webpackChunkName: "StatePush" */ './HooksExample/StatePush/index')),
