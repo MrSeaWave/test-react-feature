@@ -1,11 +1,12 @@
 const loggerMiddleware = (store) => (next) => (action) => {
-  console.group("loggerMiddleware")
+  console.group('loggerMiddleware');
   console.log('store', store);
   console.log('state', store.getState());
   console.log('action', action);
-  console.groupEnd("loggerMiddleware")
+  console.log('next fn', next);
+  console.groupEnd('loggerMiddleware');
   next(action);
-  console.log('loggerMiddleware next state', store.getState());
-}
+  console.log('%c loggerMiddleware next state', 'color:green', store.getState());
+};
 
 export default loggerMiddleware;
