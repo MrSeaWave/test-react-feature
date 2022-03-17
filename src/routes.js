@@ -42,6 +42,11 @@ const routes = [
     component: lazy(() => import(/* webpackChunkName: "StatePush" */ './HooksExample/StatePush/index')),
   },
     {
+    path: '/hooks-setTimeout',
+    title: 'hooks/setTimeout',
+    component: lazy(() => import(/* webpackChunkName: "SetTimeoutPage" */ './HooksExample/SetTimeoutPage')),
+  },
+    {
     path: '/my-redux',
     title: '手写redux',
     component: lazy(() => import(/* webpackChunkName: "MyRedux" */ './MyRedux/demo/index')),
