@@ -8,7 +8,7 @@ class ColorPanel extends Component {
   };
 
   render() {
-    const { themeColor } = this.props;
+    const { themeReducer:{themeColor} } = this.props;
     console.log('this.props', this.props);
     return (
       <div>

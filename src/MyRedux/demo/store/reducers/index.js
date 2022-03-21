@@ -1,3 +1,5 @@
-import themeReducer from './themeReducer'
+import { combineReducers } from '../../../CustomRedux';
+import themeReducer from './themeReducer';
+import countReducer from './countReducer';
 
-export default themeReducer
+export default combineReducers({ themeReducer, countReducer });
