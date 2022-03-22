@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-class PlusWithStateVal extends React.Component {
+class PlusWithStateVal extends PureComponent {
   constructor(props) {
     super(props);
     console.log('PlusWithStateVal');
@@ -58,7 +58,8 @@ class PlusWithStateVal extends React.Component {
 
     return (
       <div style={{ marginTop: 20 }}>
-        PlusWithStateVal 每次点击按钮前，请点击reset按钮
+        <h3>React ++数据setState 案例</h3>
+        每次点击按钮前，请点击reset按钮
         <button
           onClick={() => {
             this.setState({ val: 0 });

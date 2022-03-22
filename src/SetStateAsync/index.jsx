@@ -45,6 +45,7 @@ class SetStateAsync extends React.Component {
     return (
       <>
         <div>
+          <h3>React Class SetState 异步 同步案例</h3>
           每次点击按钮前，请点击reset按钮
           <button
             onClick={() => {
