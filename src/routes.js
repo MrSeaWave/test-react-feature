@@ -51,6 +51,11 @@ const routes = [
     title: 'hooks/different',
     component: lazy(() => import(/* webpackChunkName: "CaptureRender" */ './HooksExample/CaptureRender')),
   },
+  {
+    path: '/class-setStateAsync',
+    title: 'class/setStateAsync',
+    component: lazy(() => import(/* webpackChunkName: "SetStateAsync" */ './SetStateAsync')),
+  },
     {
     path: '/my-redux',
     title: '手写redux',
