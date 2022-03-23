@@ -20,7 +20,9 @@ class SetStateAsync extends React.Component {
   };
 
   onSetStateCbClick = () => {
-    this.setState((prevState, props) => ({ val: prevState.val + 1 }));
+    this.setState((prevState, props) => ({ val: prevState.val + 1 }),()=>{
+      console.log("setState,的第二个callBack，this.state.val",this.state.val)// 1
+    });
     console.log(this.state.val); // 0
     this.setState((prevState, props) => ({ val: prevState.val + 1 }));
     console.log(this.state.val); // 0
@@ -40,7 +42,7 @@ class SetStateAsync extends React.Component {
 
   render() {
     // 0,2,3,4
-    console.log('this.state', this.state);
+    console.log('SetStateAsync Render this.state', this.state);
 
     return (
       <>

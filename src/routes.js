@@ -53,7 +53,7 @@ const routes = [
   },
   {
     path: '/class-setStateAsync',
-    title: 'class/setStateAsync',
+    title: 'class/setState异步、同步',
     component: lazy(() => import(/* webpackChunkName: "SetStateAsync" */ './SetStateAsync')),
   },
     {

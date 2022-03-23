@@ -54,7 +54,7 @@ class PlusWithStateVal extends PureComponent {
   };
 
   render() {
-    console.log('this.state', this.state);
+    console.log('PlusWithStateVal Render this.state', this.state);
 
     return (
       <div style={{ marginTop: 20 }}>
