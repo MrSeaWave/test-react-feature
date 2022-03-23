@@ -67,6 +67,11 @@ const routes = [
     title: 'class/setState异步、同步',
     component: lazy(() => import(/* webpackChunkName: "SetStateAsync" */ './SetStateAsync')),
   },
+   {
+    path: '/ErrorBoundary',
+    title: 'ErrorBoundary',
+    component: lazyImport('./ErrorBoundary/demo'),
+  },
   {
     path: '/my-redux',
     title: '手写redux',
