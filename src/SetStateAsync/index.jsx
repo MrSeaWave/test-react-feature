@@ -40,6 +40,10 @@ class SetStateAsync extends React.Component {
     }, 0);
   };
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("SetStateAsync componentDidUpdate")
+  }
+
   render() {
     // 0,2,3,4
     console.log('SetStateAsync Render this.state', this.state);
