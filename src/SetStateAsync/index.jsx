@@ -19,12 +19,16 @@ class SetStateAsync extends React.Component {
     //  render --->this.state 1
   };
 
+  //如果是下一个state依赖前一个state的话，推荐给setState一个参数传入一个function
   onSetStateCbClick = () => {
-    this.setState((prevState, props) => ({ val: prevState.val + 1 }),()=>{
-      console.log("setState,的第二个callBack，this.state.val",this.state.val)// 1
-    });
+    this.setState(
+      (prevState, props) => ({ val: prevState.val + 1 }),
+      () => {
+        console.log('setState,的第二个callBack，this.state.val', this.state.val); // 1
+      }
+    );
     console.log(this.state.val); // 0
-    this.setState((prevState, props) => ({ val: prevState.val + 1 }));
+    this.setState((prevState, props) => ({ val: prevState.val + 1 })); 
     console.log(this.state.val); // 0
     // render --->this.state 2
   };
@@ -41,7 +45,7 @@ class SetStateAsync extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("SetStateAsync componentDidUpdate")
+    console.log('SetStateAsync componentDidUpdate');
   }
 
   render() {
