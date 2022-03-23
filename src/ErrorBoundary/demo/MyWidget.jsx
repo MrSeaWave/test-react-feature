@@ -5,13 +5,22 @@ class MyWidget extends Component {
     counter: 0,
   };
   handleClick = () => {
-    this.setState((preState) => ({ counter: preState.counter + 1 }));
-    // throw Error();
+    this.setState(
+      (preState) => ({ counter: preState.counter + 1 }),
+      () => {
+        // throw Error('也会触发ErrorBoundary');
+      }
+    );
   };
 
   throwErrorClick = () => {
-    throw new Error('错误事件处理，ErrorBoundary捕获不到');
+    throw new Error('错误事件处理，ErrorBoundary 捕获不到');
   };
+
+  componentWillUnmount() {
+    console.log('%c 子组件卸载', 'color:green');
+  }
+
   render() {
     if (this.state.counter === 5) {
       // Simulate a JS error
