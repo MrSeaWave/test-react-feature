@@ -1,7 +1,8 @@
 import React, { lazy } from 'react';
 // https://stackoverflow.com/questions/63808927/reactjs-create-chunks-automatically-with-lazy-loading
+
 const lazyImport = (path) => {
-  return import(/* webpackChunkName: "[request]-lazy" */ `${path}`);
+  return lazy(() =>import(/* webpackChunkName: "[request]-lazy" */ `${path}`));
 };
 
 const routes = [
@@ -70,7 +71,7 @@ const routes = [
     path: '/my-redux',
     title: '手写redux',
     // component: lazy(() => import(/* webpackChunkName: "MyRedux" */ './MyRedux/demo/index')),
-    component: lazy(() => lazyImport('./MyRedux/demo')),
+    component: lazyImport('./MyRedux/demo'),
   },
 ];
 
