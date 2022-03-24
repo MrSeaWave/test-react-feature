@@ -33,17 +33,33 @@ function HooksSetTimeoutPage(props) {
 
   const handleClick1 = () => {
     for (let i = 0; i < 5; i++) {
-      setNumber(1);
+      // 闭包 五次 setNumber都是 1
+      setNumber(num + 1);
       console.log('hooks', num); // 0 0 0 0 0
       //   HooksSetTimeoutPage 只会渲染一次
+
+      // 五次 setNumber 分别为 1，2，3，4，5
+      // setNumber((prevState) => prevState + 1);
+      // console.log('hooks', num); // 0 0 0 0 0
+      //   但 HooksSetTimeoutPage 只会渲染一次
     }
+  };
+
+  const handleClick2 = () => {
+    console.log('handleClick2');
+    setNumber(num);
   };
   return (
     <div>
       <h2>hooks</h2>
       <h3>num: {num}</h3>
       <button onClick={handleClick}>在setTimeout中执行setState(val),过时的闭包</button>
-      <button onClick={handleClick1}>在 hooks中5次setState相同的值， 会进行数值的比较</button>
+      <button onClick={handleClick1}>
+        在 hooks中5次setState(val)值，会在队列中依次执行setState,但最终会把最后结果渲染到页面上
+      </button>
+      <button onClick={handleClick2}>
+        在 hooks中setState(当前的num)值， 会进行数值的比较,不进行更新
+      </button>
     </div>
   );
 }
