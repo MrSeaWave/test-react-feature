@@ -72,6 +72,16 @@ const routes = [
     title: 'ErrorBoundary',
     component: lazyImport('./ErrorBoundary/demo'),
   },
+   {
+    path: '/ref',
+    title: 'ref',
+    component: lazyImport('./Ref'),
+  },
+   {
+    path: '/react-example',
+    title: 'React例子',
+    component: lazyImport('./ReactExample'),
+  },
   {
     path: '/my-redux',
     title: '手写redux',
