@@ -42,12 +42,20 @@ function HooksSetTimeoutPage(props) {
       // setNumber((prevState) => prevState + 1);
       // console.log('hooks', num); // 0 0 0 0 0
       //   但 HooksSetTimeoutPage 只会渲染一次
+      // 对于某个组件来说，多次调用同一个 setState ，它们会依次执行。而最终与 currentState 进行浅比较时只会用最终计算出来的 newState，来决定当前节点是否需要更新。
     }
   };
 
   const handleClick2 = () => {
-    console.log('handleClick2', num);
-    setNumber(num);
+    // https://zhuanlan.zhihu.com/p/452089306
+    console.log('handleClick2_2', num);
+    setNumber(2);
+
+    // 如果当前fiber没有处于更新阶段。
+    // 那么通过调用lastRenderedReducer获取最新的state,和上一次的currentState，进行浅比较，
+    // 如果相等，那么就退出，
+    // 这就证实了为什么useState，两次值相等的时候，组件不渲染的原因了，这个机制和Component模式下的setState有一定的区别。
+    // 如果两次state不相等，那么调用scheduleUpdateOnFiber调度渲染当前fiber，scheduleUpdateOnFiber是react渲染更新的主要函数。
   };
   return (
     <div>
@@ -58,7 +66,7 @@ function HooksSetTimeoutPage(props) {
         在 hooks中5次setState(val)值，会在队列中依次执行setState,但最终会把最后结果渲染到页面上
       </button>
       <button onClick={handleClick2}>
-        在 hooks中setState(当前的num)值， 会进行数值的比较,不进行更新
+        在 hooks中setState(2)值， 会进行数值的比较,不进行更新
       </button>
     </div>
   );
