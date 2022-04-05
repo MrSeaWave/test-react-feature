@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
 
 function HooksSetTimeoutPage(props) {
-  console.log('HooksSetTimeoutPage');
   const [num, setNumber] = useState(0);
+  console.log('HooksSetTimeoutPage Render State Num:', num);
   const handleClick = () => {
     for (let i = 0; i < 5; i++) {
       setTimeout(() => {
@@ -46,7 +46,7 @@ function HooksSetTimeoutPage(props) {
   };
 
   const handleClick2 = () => {
-    console.log('handleClick2');
+    console.log('handleClick2', num);
     setNumber(num);
   };
   return (
