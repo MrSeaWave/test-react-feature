@@ -22,7 +22,7 @@ module.exports = {
   }, //项目唯一入口文件
   output: {
     publicPath: '/', //打包生成的`index.html`文件里面引用资源的前缀,注意看source
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[hash].js',
     path: outputPath,
   },
   plugins: [

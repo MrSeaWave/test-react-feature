@@ -7,7 +7,9 @@ const port = 8080;
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map', // 更容易地追踪错误和警告
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
+    hot: true,
     // 实时加载 live-reloading
     contentBase: path.join(__dirname, '../public'),
     proxy: {

@@ -48,6 +48,7 @@ function HooksSetTimeoutPage(props) {
 
   const handleClick2 = () => {
     // https://zhuanlan.zhihu.com/p/452089306
+    // https://github.com/facebook/react/blob/d5f1b067c8bbb826b823d0354a28ba31078b70c0/packages/react-reconciler/src/ReactFiberHooks.new.js#L875
     console.log('handleClick2_2', num);
     setNumber(2);
 
@@ -56,6 +57,10 @@ function HooksSetTimeoutPage(props) {
     // 如果相等，那么就退出，
     // 这就证实了为什么useState，两次值相等的时候，组件不渲染的原因了，这个机制和Component模式下的setState有一定的区别。
     // 如果两次state不相等，那么调用scheduleUpdateOnFiber调度渲染当前fiber，scheduleUpdateOnFiber是react渲染更新的主要函数。
+
+    // 实际表现会渲染两次，https://zh-hans.reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
+  //  https://zh-hans.reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update
+  //  需要注意的是，React 可能仍需要在跳过渲染前渲染该组件。不过由于 React 不会对组件树的“深层”节点进行不必要的渲染
   };
   return (
     <div>
@@ -68,8 +73,14 @@ function HooksSetTimeoutPage(props) {
       <button onClick={handleClick2}>
         在 hooks中setState(2)值， 会进行数值的比较,不进行更新
       </button>
+      <TestChildren/>
     </div>
   );
+}
+
+function TestChildren() {
+  console.log("TestChildren")
+  return <div>孩子</div>
 }
 
 class ClassSetTimeoutPage extends Component {
