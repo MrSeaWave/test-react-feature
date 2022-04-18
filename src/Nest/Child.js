@@ -17,6 +17,15 @@ class ChildIndex extends React.Component {
     console.log('children componentDidMount')
   }
 
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("children getSnapshotBeforeUpdate")
+    return null
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('children componentDidUpdate')
+  }
+
   render() {
     // 0,2,3,4
     console.log('children', this.state);

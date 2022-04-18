@@ -18,6 +18,15 @@ class FatherIndex extends React.Component {
     console.log('father componentDidMount')
   }
 
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("father getSnapshotBeforeUpdate")
+    return null
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("father componentDidUpdate")
+  }
+
   render() {
     // 0,2,3,4
     console.log('father', this.state);
@@ -25,6 +34,7 @@ class FatherIndex extends React.Component {
     return (
       <>
         <div>Father</div>
+        <button onClick={()=>this.forceUpdate()}>forceUpdate</button>
         <ChildIndex/>
       </>
     );
