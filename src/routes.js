@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 // https://stackoverflow.com/questions/63808927/reactjs-create-chunks-automatically-with-lazy-loading
 
 const lazyImport = (path) => {
-  return lazy(() =>import(/* webpackChunkName: "[request]-lazy" */ `${path}`));
+  return lazy(() => import(/* webpackChunkName: "[request]-lazy" */ `${path}`));
 };
 
 const routes = [
@@ -67,20 +67,25 @@ const routes = [
     title: 'class/setState异步、同步',
     component: lazy(() => import(/* webpackChunkName: "SetStateAsync" */ './SetStateAsync')),
   },
-   {
+  {
     path: '/ErrorBoundary',
     title: 'ErrorBoundary',
     component: lazyImport('./ErrorBoundary/demo'),
   },
-   {
+  {
     path: '/ref',
     title: 'ref',
     component: lazyImport('./Ref'),
   },
-   {
+  {
     path: '/react-example',
     title: 'React例子',
     component: lazyImport('./ReactExample'),
+  },
+  {
+    path: '/add-with-1s',
+    title: 'hooks 每秒+1',
+    component: lazyImport('./HooksExample/Add1SPage.jsx'),
   },
   {
     path: '/my-redux',
