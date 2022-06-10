@@ -93,6 +93,11 @@ const routes = [
     // component: lazy(() => import(/* webpackChunkName: "MyRedux" */ './MyRedux/demo/index')),
     component: lazyImport('./MyRedux/demo'),
   },
+  {
+    path: '/suspense-demo',
+    title: 'suspense-demo',
+    component: lazyImport('./Suspense'),
+  },
 ];
 
 export default routes;
